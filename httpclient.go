@@ -29,6 +29,9 @@ import (
 
 	"encoding/json"
 	"mime/multipart"
+
+	"gitlab.com/yosiaagustadewa/qsl-util/api"
+	"gitlab.com/yosiaagustadewa/qsl-util/helper"
 )
 
 // Constants definations
@@ -126,6 +129,36 @@ var jarOptions = []int{
 // Thin wrapper of http.Response(can also be used as http.Response).
 type Response struct {
 	*http.Response
+}
+
+// Decode body payload
+func (this *Response) Decode(target interface{}) error {
+	byteData, err := this.ReadAll()
+	if err != nil {
+		return err
+	}
+
+	fmt.Println(string(byteData))
+
+	if err = json.Unmarshal(byteData, target); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// DecodeValues
+func (this *Response) DecodeValues(target interface{}) error {
+	var resp api.Response
+	if err := this.Decode(&resp); err != nil {
+		return err
+	}
+
+	if err := helper.PairValues(resp.Values, target); err != nil {
+		return err
+	}
+
+	return nil
 }
 
 // Read response body into a byte slice.
