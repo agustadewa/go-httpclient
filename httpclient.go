@@ -36,7 +36,7 @@ import (
 // Constants definations
 // CURL options, see https://github.com/bagder/curl/blob/169fedbdce93ecf14befb6e0e1ce6a2d480252a3/packages/OS400/curl.inc.in
 const (
-	VERSION   = "0.6.9"
+	VERSION   = "1.0.0"
 	USERAGENT = "go-httpclient v" + VERSION
 )
 
