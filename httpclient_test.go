@@ -39,7 +39,6 @@ func TestRequest(t *testing.T) {
 	if res.StatusCode != 200 {
 		t.Error("Status Code not 200")
 	}
-
 	// post
 	res, err = NewHttpClient().
 		Post("http://httpbin.org/post", map[string]string{
