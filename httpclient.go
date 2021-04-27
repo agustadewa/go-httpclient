@@ -28,10 +28,9 @@ import (
 	"compress/gzip"
 
 	"encoding/json"
-	"mime/multipart"
-
 	"gitlab.com/yosiaagustadewa/qsl-util/api"
 	"gitlab.com/yosiaagustadewa/qsl-util/helper"
+	"mime/multipart"
 )
 
 // Constants definations
@@ -137,8 +136,6 @@ func (this *Response) Decode(target interface{}) error {
 	if err != nil {
 		return err
 	}
-
-	fmt.Println(string(byteData))
 
 	if err = json.Unmarshal(byteData, target); err != nil {
 		return err
