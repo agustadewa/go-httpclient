@@ -28,16 +28,15 @@ import (
 	"compress/gzip"
 
 	"encoding/json"
-	"mime/multipart"
-
 	"gitlab.com/yosiaagustadewa/qsl-util/api"
 	"gitlab.com/yosiaagustadewa/qsl-util/helper"
+	"mime/multipart"
 )
 
 // Constants definations
 // CURL options, see https://github.com/bagder/curl/blob/169fedbdce93ecf14befb6e0e1ce6a2d480252a3/packages/OS400/curl.inc.in
 const (
-	VERSION   = "0.6.9"
+	VERSION   = "1.0.0"
 	USERAGENT = "go-httpclient v" + VERSION
 )
 
@@ -137,8 +136,6 @@ func (this *Response) Decode(target interface{}) error {
 	if err != nil {
 		return err
 	}
-
-	fmt.Println(string(byteData))
 
 	if err = json.Unmarshal(byteData, target); err != nil {
 		return err

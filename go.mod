@@ -1,9 +1,8 @@
 module github.com/agustadewa/go-httpclient
 
-go 1.12
+go 1.16
 
 require (
-	github.com/ddliu/go-httpclient v0.6.9
 	github.com/gin-gonic/gin v1.7.1 // indirect
 	github.com/go-playground/validator v9.31.0+incompatible // indirect
 	gitlab.com/yosiaagustadewa/qsl-util v0.0.0-20210427092310-ba5a14334822

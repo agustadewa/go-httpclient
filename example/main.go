@@ -5,7 +5,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/ddliu/go-httpclient"
+	"github.com/agustadewa/go-httpclient"
 	"net/http"
 )
 
